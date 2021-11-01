@@ -15,13 +15,28 @@ const theme = createTheme({
 });
 
 export class ShowUsers extends Component {
+
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+       users : [],
+    }
+  }
+
+  handleButton = () => {
+    console.log("Show users working, fetch/setstate to do")
+    // fetch, setState
+  }
+  
   render() {
     return (
       <div className="showUsers">
         <div className="showUsers__interface">
           <h1>Show Users</h1>
-          <Button variant="contained" className="showUsers__button">
-            Show Users
+          <Button variant="contained" className="showUsers__button"
+          onClick={this.handleButton}>
+            Get Users
           </Button>
           <Box
             className="showUsers__box"

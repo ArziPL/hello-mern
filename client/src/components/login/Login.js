@@ -8,20 +8,30 @@ export class Login extends Component {
          super(props)
      
          this.state = {
-              date: new Date(),
+              login : "",
+              password : "",
          }
      }
-     
 
-    componentDidMount() {
-        fetch('http://192.168.56.1:3001/login', {
-            method:'POST',
-            headers: {
-                'Content-Type':'application/json',
-            },
-            body:JSON.stringify(this.state.date)
+     handleLogin = (e) => {
+         this.setState({
+             login: e.target.value
+         })
+     }
+
+     handlePassword = (e) => {
+        this.setState({
+            password: e.target.value
         })
     }
+
+    handleSubmit = () => {
+        console.log("Login submit working, fetch to do")
+        // fetch
+    }
+     
+
+    
 
     render() {
         return (
@@ -34,6 +44,7 @@ export class Login extends Component {
                     label="Login" 
                     variant="outlined" 
                     color="warning"
+                    onChange={this.handleLogin}
                     />
 
                     <TextField 
@@ -41,9 +52,10 @@ export class Login extends Component {
                     id="outlined-basic" 
                     label="Password" 
                     variant="outlined" color="warning" 
+                    onChange={this.handlePassword}
                     />
 
-                    <Button className="login__button" variant="contained">Login</Button>
+                    <Button className="login__button" variant="contained" onClick={this.handleSubmit}>Login</Button>
 
                     <h3>Login successful</h3>
                 </div>

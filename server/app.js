@@ -1,6 +1,5 @@
 var express = require('express');
 var cors = require('cors')
-var bodyParser = require('body-parser')
 
 var app = express();
 
@@ -8,20 +7,20 @@ app.use(cors({
   origin: "*"
 }))
 
-app.use(bodyParser.json())
+app.use(express.json());
+app.use(express.urlencoded({
+  extended: true
+}));
 
-var urlencodedParser = bodyParser.urlencoded({
-  extend:false
-})
 
 app.get('/', function(req, res) {
-  res.send("Get at /")
   console.log("Get at /")
+  res.send("Get at /")
 });
 
 app.post('/login', function(req, res) {
-  console.log("Post request at /login")
-  console.log(req.body.currentDate)
+  console.log("Post at /login")
+  res.send("Post at /login")
 });
 
 app.listen(3001, function() {
