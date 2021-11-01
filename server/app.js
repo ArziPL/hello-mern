@@ -12,15 +12,24 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-
-app.get('/', function(req, res) {
-  console.log("Get at /")
-  res.send("Get at /")
+app.put('/login', function(req, res) {
+  console.log("Put at /login")
+  res.send("Put at /login")
 });
 
-app.post('/login', function(req, res) {
-  console.log("Post at /login")
-  res.send("Post at /login")
+app.post('/register', function(req, res) {
+  console.log("Register at /register")
+  res.send("Register at /register")
+});
+
+app.get('/getusers', function(req, res) {
+  console.log("Getusers at /getusers")
+  res.send("Getusers at /getusers")
+});
+
+app.delete('/delete', function(req, res) {
+  console.log("Delete at /delete")
+  res.send("Delete at /delete")
 });
 
 app.listen(3001, function() {
