@@ -4,7 +4,7 @@
 todo
 
 ### USED TECHNOLOGIES
-todo
+React, MaterialUI, Node.js/Express.js
 
 ### HOW TO
 todo
