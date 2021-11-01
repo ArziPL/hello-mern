@@ -1,0 +1,24 @@
+.register {
+    width: 33%;
+    height: 100vh;
+    text-align: center;
+    background-color: #D438B9;
+    display:flex;
+    flex-direction: column;
+}
+
+.register__interface {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+}
+
+.register__inputs {
+    width: 300px;
+}
+
+.register__button {
+    width: 100px;
+}

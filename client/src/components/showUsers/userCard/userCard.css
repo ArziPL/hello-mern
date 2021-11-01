@@ -1,0 +1,10 @@
+.userCard {
+    width: 80%;
+    height: 35px;
+    background-color: black;
+    font-size: 0.7rem;
+    color: white;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
