@@ -27,7 +27,13 @@ export class Login extends Component {
 
     handleSubmit = () => {
         console.log("Login submit working, fetch to do")
-        // fetch
+        fetch("http://192.168.1.51:3001/login" , {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify({login:this.state.login, password:this.state.password})
+        })
     }
      
 
@@ -45,6 +51,7 @@ export class Login extends Component {
                     variant="outlined" 
                     color="warning"
                     onChange={this.handleLogin}
+                    autoComplete="off"
                     />
 
                     <TextField 
@@ -53,6 +60,7 @@ export class Login extends Component {
                     label="Password" 
                     variant="outlined" color="warning" 
                     onChange={this.handlePassword}
+                    autoComplete="off"
                     />
 
                     <Button className="login__button" variant="contained" onClick={this.handleSubmit}>Login</Button>

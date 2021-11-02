@@ -32,8 +32,13 @@ export class Register extends Component {
         })
    }
    handleSubmit = () => {
-       console.log("Register submit working, fetch to do")
-       // fetch
+       fetch("http://192.168.1.51:3001/register" , {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify({email:this.state.email,login:this.state.login, password:this.state.password})
+        })
    }
 
     render() {
@@ -48,6 +53,7 @@ export class Register extends Component {
                     variant="outlined" 
                     color="warning"
                     onChange={this.handleEmail}
+                    autoComplete="off"
                     />
 
                     <TextField 
@@ -57,6 +63,7 @@ export class Register extends Component {
                     variant="outlined" 
                     color="warning" 
                     onChange={this.handleLogin}
+                    autoComplete="off"
                     />
 
                     <TextField 
@@ -66,6 +73,7 @@ export class Register extends Component {
                     variant="outlined" 
                     color="warning" 
                     onChange={this.handlePassword}
+                    autoComplete="off"
                     />
 
                     <Button className="register__button" variant="contained" onClick={this.handleSubmit}>Register</Button>
