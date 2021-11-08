@@ -13,7 +13,13 @@ export class UserCard extends Component {
     }
 
     handleDelete = () => {
-        console.log("Delete working, fetch/refresh to do")
+        fetch("http://192.168.1.51:3001/delete" , {
+            method:'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify({login:this.props.login})
+        })
     }
     
     render() {

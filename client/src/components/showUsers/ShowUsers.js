@@ -26,7 +26,17 @@ export class ShowUsers extends Component {
 
   handleButton = () => {
     console.log("Show users working, fetch/setstate to do")
-    // fetch, setState
+    fetch("http://192.168.1.51:3001/getUsers" , {
+            method:'GET',
+            headers:{
+                'Content-Type':'application/json',
+            },
+        }).then(res => {
+          return res.json()
+        }).then(users => {
+          this.setState({users:users})
+        })
+        console.log(this.state.users)
   }
   
   render() {
@@ -51,15 +61,9 @@ export class ShowUsers extends Component {
             }}
           >
             <UserCard id="123" login="ArZi" loginNum="23"></UserCard>
-            <UserCard></UserCard>
-            <UserCard></UserCard>
-            <UserCard></UserCard>
-            <UserCard></UserCard>
-            <UserCard></UserCard>
-            <UserCard></UserCard>
-            <UserCard></UserCard>
-            <UserCard></UserCard>
-            <UserCard></UserCard>
+
+            {this.state.users.map((user,index) => 
+              <UserCard key={this.state.users[index]._id} login={this.state.users[index].login} loginNum={this.state.users[index].numOfLogins}></UserCard>)}
           </Box>
         </div>
       </div>
