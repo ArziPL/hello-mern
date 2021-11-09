@@ -11,6 +11,7 @@ ToDo :
 - make inputs empty after submitting
 - some validation to inputs
 - handle bad requests better (it's working, but there's no info it was bad request)
+- sometimes client crash "Failed to fetch", i wonder why
 
 ### USED TECHNOLOGIES
 <span>
@@ -21,8 +22,8 @@ ToDo :
 </span>
 
 ### HOW TO
-CLIENT : `hello-mern\client` => `npm install` => `npm start`  
-SERVER : `hello-mern\server` => `nmp install` => `npm run start`  
+CLIENT : `hello-mern/client` => `npm install` => `npm start`  
+SERVER : `hello-mern/server` => `nmp install` => `npm run start`  
 DATABASE : perfectly create new => `mongosh` => `use helloMernBase` => `db.createCollection("users")`
 
 ***
