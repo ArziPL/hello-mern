@@ -1,0 +1,6 @@
+[
+    {"_id":{"$oid":"618a33106bc18d3a2cd21618"},"email":"testUser@test.com","login":"testUser","password":"testUser","numOfLogins":0},
+    {"_id":{"$oid":"618a33176bc18d3a2cd21619"},"email":"testUser2@test.com","login":"testUser2","password":"testUser2","numOfLogins":0},
+    {"_id":{"$oid":"618a331c6bc18d3a2cd2161a"},"email":"testUser3@test.com","login":"testUser3","password":"testUser3","numOfLogins":0},
+    {"_id":{"$oid":"618a33226bc18d3a2cd2161b"},"email":"testUser4@test.com","login":"testUser4","password":"testUser4","numOfLogins":0}
+]
