@@ -1,24 +1,24 @@
 .login {
-    width: 33%;
-    height: 100vh;
-    text-align: center;
-    background-color: #564CD9;
-    display:flex;
-    flex-direction: column;
+  width: 33%;
+  height: 100vh;
+  text-align: center;
+  background-color: #564cd9;
+  display: flex;
+  flex-direction: column;
 }
 
 .login__interface {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .login__inputs {
-    width: 300px;
+  width: 300px;
 }
 
 .login__button {
-    width: 100px;
+  width: 100px;
 }

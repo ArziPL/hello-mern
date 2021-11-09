@@ -1,27 +1,27 @@
 .showUsers {
-    width: 33%;
-    height: 100vh;
-    text-align: center;
-    background-color: #FF8563;
-    display:flex;
-    flex-direction: column;
+  width: 33%;
+  height: 100vh;
+  text-align: center;
+  background-color: #ff8563;
+  display: flex;
+  flex-direction: column;
 }
 
-.showUsers__interface{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:10px;
+.showUsers__interface {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .showUsers__button {
-    width: 140px;
+  width: 140px;
 }
 
 .showUsers__box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y:auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
 }

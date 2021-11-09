@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UserCard from "./userCard/UserCard"
+import UserCard from "./userCard/UserCard";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import "./showUsers.css";
@@ -15,37 +15,44 @@ const theme = createTheme({
 });
 
 export class ShowUsers extends Component {
-
   constructor(props) {
-    super(props)
-  
+    super(props);
+
     this.state = {
-       users : [],
-    }
+      users: [],
+    };
   }
 
   handleButton = () => {
-    console.log("Show users working, fetch/setstate to do")
-    fetch("http://192.168.1.51:3001/getUsers" , {
-            method:'GET',
-            headers:{
-                'Content-Type':'application/json',
-            },
-        }).then(res => {
-          return res.json()
-        }).then(users => {
-          this.setState({users:users})
-        })
-        console.log(this.state.users)
-  }
-  
+    console.log("Show users working, fetch/setstate to do");
+    fetch("http://192.168.1.51:3001/getUsers", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => {
+        if (!res.ok) {
+          alert(`Something went wrong\nResponse text : ${res.statusText}`);
+        } else {
+          return res.json();
+        }
+      })
+      .then((users) => {
+        this.setState({ users: users });
+      })
+      .catch((error) => {
+        alert(`Something went wrong, maybe bad login/password ?`);
+        console.log(error);
+      });
+  };
+
   render() {
     return (
       <div className="showUsers">
         <div className="showUsers__interface">
           <h1>Show Users</h1>
-          <Button variant="contained" className="showUsers__button"
-          onClick={this.handleButton}>
+          <Button variant="contained" className="showUsers__button" onClick={this.handleButton}>
             Get Users
           </Button>
           <Box
@@ -60,10 +67,13 @@ export class ShowUsers extends Component {
               },
             }}
           >
-            <UserCard id="123" login="ArZi" loginNum="23"></UserCard>
-
-            {this.state.users.map((user,index) => 
-              <UserCard key={this.state.users[index]._id} login={this.state.users[index].login} loginNum={this.state.users[index].numOfLogins}></UserCard>)}
+            {this.state.users.map((user, index) => (
+              <UserCard
+                key={this.state.users[index]._id}
+                login={this.state.users[index].login}
+                loginNum={this.state.users[index].numOfLogins}
+              ></UserCard>
+            ))}
           </Box>
         </div>
       </div>
