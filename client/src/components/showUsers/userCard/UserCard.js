@@ -12,7 +12,7 @@ export class UserCard extends Component {
   }
 
   handleDelete = () => {
-    fetch("http://192.168.1.51:3001/delete", {
+    fetch("http://localhost:3001/delete", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

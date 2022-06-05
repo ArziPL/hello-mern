@@ -26,7 +26,7 @@ export class Login extends Component {
   };
 
   handleSubmit = () => {
-    fetch("http://192.168.1.51:3001/login", {
+    fetch("http://localhost:3001/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

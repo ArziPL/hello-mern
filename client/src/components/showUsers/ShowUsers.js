@@ -25,7 +25,7 @@ export class ShowUsers extends Component {
 
   handleButton = () => {
     console.log("Show users working, fetch/setstate to do");
-    fetch("http://192.168.1.51:3001/getUsers", {
+    fetch("http://localhost:3001/getUsers", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
